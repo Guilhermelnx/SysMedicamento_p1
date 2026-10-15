@@ -19,7 +19,7 @@ public class Medicamento {
 
     //Construtores
 
-    public Medicamento(String codigo, String nome, String descricao, String principioAtivo, LocalDate dataValidade, int quantidadeEstoque, boolean controlado, Fornecedor fornecedor, BigDecimal preco) {
+    public Medicamento(String codigo, String nome, String descricao, String principioAtivo, LocalDate dataValidade, int quantidadeEstoque, boolean controlado, Fornecedor fornecedor) {
         this.codigo = UUID.randomUUID().toString();
         Nome = nome;
         this.descricao = descricao;

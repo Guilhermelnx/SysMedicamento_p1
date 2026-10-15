@@ -51,17 +51,17 @@ public class ArquivoUtil {
                 // Recriando o fornecedor com os dados salvos
                 Fornecedor f = new Fornecedor(dados[8], dados[9], "", "", "", "");
 
-                // Lendo os dados para recriar o medicamento
                 Medicamento m = new Medicamento(
-                        dados[0],
-                        dados[1],
-                        dados[2],
-                        dados[3],
-                        LocalDate.parse(dados[4]),
-                        Integer.parseInt(dados[5]),
-                        // Boolean.parseBoolean(dados[7]),  <-- Lembre-se de adicionar o preço ao construtor
+                        dados[0], // codigo
+                        dados[1], // nome
+                        dados[2], // descricao
+                        dados[3], // principioAtivo
+                        LocalDate.parse(dados[4]), // dataValidade
+                        Integer.parseInt(dados[5]), // quantidadeEstoque
+                        Boolean.parseBoolean(dados[7]), // controlado
+                        f // fornecedor
                 );
-                // m.setPreco(new BigDecimal(dados[6])); // Caso ajuste o construtor ou use set
+                m.setPreco(new BigDecimal(dados[6]));
                 lista.add(m);
             }
         } catch (IOException | NumberFormatException e) {
