@@ -1,4 +1,4 @@
-package com.example.medicamentos_p1;
+package models;
 
 
 import java.math.BigDecimal;
@@ -20,7 +20,11 @@ public class Medicamento {
     //Construtores
 
     public Medicamento(String codigo, String nome, String descricao, String principioAtivo, LocalDate dataValidade, int quantidadeEstoque, boolean controlado, Fornecedor fornecedor) {
-        this.codigo = UUID.randomUUID().toString();
+        if (codigo == null || codigo.trim().isEmpty()) {
+            this.codigo = UUID.randomUUID().toString();
+        } else {
+            this.codigo = codigo;
+        }
         Nome = nome;
         this.descricao = descricao;
         this.principioAtivo = principioAtivo;
@@ -28,7 +32,7 @@ public class Medicamento {
         this.quantidadeEstoque = quantidadeEstoque;
         this.controlado = controlado;
         this.fornecedor = fornecedor;
-        this.preco = preco;
+        //this.preco = preco;
     }
 
 

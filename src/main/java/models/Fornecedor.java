@@ -1,4 +1,4 @@
-package com.example.medicamentos_p1;
+package models;
 
 public class Fornecedor {
 

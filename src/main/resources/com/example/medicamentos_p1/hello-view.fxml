@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" prefHeight="600.0" prefWidth="800.0" spacing="15.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/26" fx:controller="com.example.medicamentos_p1.HelloController">
+<VBox alignment="CENTER" prefHeight="600.0" prefWidth="800.0" spacing="15.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HelloController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
@@ -40,8 +40,8 @@
             <Label text="Princípio Ativo: " GridPane.rowIndex="2" />
             <Label text="Quantidade de Estoque: " GridPane.rowIndex="3" />
             <Label text="Preço: " GridPane.rowIndex="4" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="txtDescricao" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="txtPrincipio" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <TextField fx:id="txtEstoque" GridPane.columnIndex="1" GridPane.rowIndex="3" />
             <TextField fx:id="txtPreco" GridPane.columnIndex="1" GridPane.rowIndex="4" />
             <Label text="Data de Validade:" GridPane.rowIndex="5" />
@@ -55,16 +55,19 @@
             <Button mnemonicParsing="false" onAction="#onSalvarClick" text="Cadastrar" />
             <Button mnemonicParsing="false" onAction="#onExcluirClick" text="Excluir" />
             <Button mnemonicParsing="false" onAction="#onConsultarClick" text="Consultar" />
+            <TextField fx:id="txtBuscaCodigo" promptText="Digite o código aqui..." />
             <Button mnemonicParsing="false" onAction="#onRelatorioEstoqueClick" text="Relatório: Estoque Baixo" />
             <Button mnemonicParsing="false" onAction="#onRelatorioVencimentoClick" text="Relatório: Vencimento" />
+            <Button mnemonicParsing="false" onAction="#onMostrarTodosClick" text="Mostrar Todos" />
          </children>
       </HBox>
       <TableView fx:id="tabelaMedicamentos" prefHeight="219.0" prefWidth="760.0" VBox.vgrow="ALWAYS">
         <columns>
-          <TableColumn prefWidth="75.0" text="NOME" />
-          <TableColumn prefWidth="133.0" text="PRINCÍPIO ATIVO" />
-            <TableColumn prefWidth="90.0" text="ESTOQUE" />
-            <TableColumn minWidth="1.0" prefWidth="101.0" text="PREÇO" />
+          <TableColumn fx:id="colNome" prefWidth="143.0" text="NOME" />
+          <TableColumn fx:id="colPrincipio" prefWidth="111.0" text="PRINCÍPIO ATIVO" />
+            <TableColumn fx:id="colEstoque" prefWidth="106.0" text="ESTOQUE" />
+            <TableColumn fx:id="colPreco" minWidth="1.0" prefWidth="105.0" text="PREÇO" />
+            <TableColumn fx:id="colValidade" minWidth="1.0" prefWidth="140.0" text="DATA DE VALIDADE" />
         </columns>
       </TableView>
    </children>
